@@ -1020,7 +1020,7 @@ public class pro1 {
             //throw new Exception("Well");
             //System.err.println("CE");
             //throw eee;
-            //System.exit(-1);
+            System.exit(-1);
         }
         System.out.println("OK");
     }
