@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class EvalVisitor extends MxBaseVisitor<node> {
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -33,7 +33,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.left_value = true;
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -44,7 +44,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "function";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -56,7 +56,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.has_scope = true;
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -67,7 +67,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "variable";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -100,7 +100,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         }
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -131,7 +131,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -156,7 +156,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -175,7 +175,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
 
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -186,7 +186,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         //ans.type = "";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -197,7 +197,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "variable";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -216,7 +216,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         }
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -227,7 +227,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "break";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -238,7 +238,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "continue";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -260,7 +260,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -282,7 +282,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "none";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -293,7 +293,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "statements";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -312,7 +312,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.has_scope = true;
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -323,7 +323,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         //ans.type = "variable";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -334,7 +334,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         //ans.type = "expression";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -345,7 +345,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "none";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -367,7 +367,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         }
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -379,7 +379,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.name = ctx.getText();
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -391,7 +391,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.name = ctx.getText();
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -405,7 +405,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -417,7 +417,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.name = ctx.getText();
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -433,7 +433,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node2);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -445,7 +445,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.name = "void";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -457,60 +457,6 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.name = ctx.getText();
         return ans;
     }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public node visitSizefunc(MxParser.SizefuncContext ctx) {
-        node ans = new node();
-        ans.type = "expression";
-        ans.name = "size";
-        node node1 = visit(ctx.expr());
-        ans.son.add(node1);
-        return ans;
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public node visitOrdfunc(MxParser.OrdfuncContext ctx) {
-        node ans = new node();
-        ans.type = "expression";
-        ans.name = "ord";
-        List <MxParser.ExprContext> list0 = ctx.expr();
-        for (MxParser.ExprContext item : list0){
-            node newnode = visit(item);
-            ans.son.add(newnode);
-        }
-        return ans;
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public node visitSubstringfunc(MxParser.SubstringfuncContext ctx) {
-        node ans = new node();
-        ans.type = "expression";
-        ans.name = "substring";
-        List <MxParser.ExprContext> list0 = ctx.expr();
-        for (MxParser.ExprContext item : list0){
-            node newnode = visit(item);
-            ans.son.add(newnode);
-        }
-        return ans;
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
     @Override public node visitExprfunc(MxParser.ExprfuncContext ctx) {
         node ans = new node();
         ans.type = "expression";
@@ -522,12 +468,6 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         }
         return ans;
     }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
     @Override public node visitOpr(MxParser.OprContext ctx) {
         node ans = new node();
         ans.type = "expression";
@@ -546,21 +486,13 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public node visitLengthfunc(MxParser.LengthfuncContext ctx) {
-        node ans = new node();
-        ans.type = "expression";
-        ans.name = "length";
-        node node1 = visit(ctx.expr());
-        ans.son.add(node1);
-        return ans;
-    }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -574,7 +506,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node1);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -590,7 +522,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node2);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -607,7 +539,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node2);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -620,7 +552,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.left_value = true;
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -636,7 +568,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node2);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -649,7 +581,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "atom";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -665,7 +597,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.son.add(node2);
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -675,21 +607,13 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         node ans = visit(ctx.expr());
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public node visitParseintfunc(MxParser.ParseintfuncContext ctx) {
-        node ans = new node();
-        node node1 = visit(ctx.expr());
-        ans.son.add(node1);
-        ans.type = "expression";
-        ans.name = "parseInt";
-        return ans;
-    }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -702,7 +626,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.left_value = true;
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -715,7 +639,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.data_type = "bool";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -728,7 +652,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.data_type = "string";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -741,7 +665,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.data_type = "int";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -754,7 +678,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.data_type = "null";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -766,7 +690,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "type";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -778,7 +702,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "type";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
@@ -790,7 +714,7 @@ public class EvalVisitor extends MxBaseVisitor<node> {
         ans.type = "type";
         return ans;
     }
-    /**
+    /*
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling

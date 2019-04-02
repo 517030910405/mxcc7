@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled15/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -343,78 +343,6 @@ public interface MxListener extends ParseTreeListener {
 	 */
 	void exitType_int(MxParser.Type_intContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code sizefunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSizefunc(MxParser.SizefuncContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code sizefunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSizefunc(MxParser.SizefuncContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ordfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterOrdfunc(MxParser.OrdfuncContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ordfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitOrdfunc(MxParser.OrdfuncContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code opl}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterOpl(MxParser.OplContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code opl}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitOpl(MxParser.OplContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code substringfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSubstringfunc(MxParser.SubstringfuncContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code substringfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSubstringfunc(MxParser.SubstringfuncContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprthis}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprthis(MxParser.ExprthisContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprthis}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprthis(MxParser.ExprthisContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprfunc(MxParser.ExprfuncContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprfunc(MxParser.ExprfuncContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code opr}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
@@ -426,18 +354,6 @@ public interface MxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOpr(MxParser.OprContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code lengthfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterLengthfunc(MxParser.LengthfuncContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code lengthfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitLengthfunc(MxParser.LengthfuncContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprnew}
 	 * labeled alternative in {@link MxParser#expr}.
@@ -511,6 +427,18 @@ public interface MxListener extends ParseTreeListener {
 	 */
 	void exitId1(MxParser.Id1Context ctx);
 	/**
+	 * Enter a parse tree produced by the {@code opl}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpl(MxParser.OplContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code opl}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpl(MxParser.OplContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code opassign}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
@@ -522,6 +450,18 @@ public interface MxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOpassign(MxParser.OpassignContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprthis}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprthis(MxParser.ExprthisContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprthis}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprthis(MxParser.ExprthisContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprmix}
 	 * labeled alternative in {@link MxParser#expr}.
@@ -535,17 +475,17 @@ public interface MxListener extends ParseTreeListener {
 	 */
 	void exitExprmix(MxParser.ExprmixContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code parseintfunc}
+	 * Enter a parse tree produced by the {@code exprfunc}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterParseintfunc(MxParser.ParseintfuncContext ctx);
+	void enterExprfunc(MxParser.ExprfuncContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code parseintfunc}
+	 * Exit a parse tree produced by the {@code exprfunc}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitParseintfunc(MxParser.ParseintfuncContext ctx);
+	void exitExprfunc(MxParser.ExprfuncContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MxParser#var_}.
 	 * @param ctx the parse tree

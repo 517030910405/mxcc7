@@ -424,14 +424,41 @@ public class pro1 {
                     throw new Exception("Not a class");
                 }
                 if (dima!=0){
-                    throw new Exception("sub Error");
+                    if (!nameb.equals("size")) {
+                        throw new Exception("sub Error");
+                    }
+                } else {
+                    if (typea.equals("string")&&nameb.equals("length")){
+                        now.data_type = "function";
+                        now.left_value = now.son.get(0).left_value;
+                        now.data_array_dim = 0;
+                    } else
+                    if (typea.equals("string")&&nameb.equals("ord")){
+                        now.data_type = "function";
+                        now.left_value = now.son.get(0).left_value;
+                        now.data_array_dim = 0;
+                    } else
+                    if (typea.equals("string")&&nameb.equals("substring")){
+                        now.data_type = "function";
+                        now.left_value = now.son.get(0).left_value;
+                        now.data_array_dim = 0;
+                    } else
+                    if (typea.equals("string")&&nameb.equals("parseInt")){
+                        now.data_type = "function";
+                        now.left_value = now.son.get(0).left_value;
+                        now.data_array_dim = 0;
+                    } else {
+                        if (namespace.location==null){
+                            throw new Exception(nameb + " is not a sub of " + typea);
+                        }
+                        if (!namespace.location.scope.containsKey(nameb)) {
+                            throw new Exception(nameb + " is not a sub of " + typea);
+                        }
+                        now.data_type = namespace.location.scope.get(nameb).type;
+                        now.data_array_dim = namespace.location.scope.get(nameb).array_dim;
+                        now.left_value = now.son.get(0).left_value;
+                    }
                 }
-                if (!namespace.location.scope.containsKey(nameb)){
-                    throw new Exception(nameb+" is not a sub of "+typea);
-                }
-                now.data_type = namespace.location.scope.get(nameb).type;
-                now.data_array_dim = namespace.location.scope.get(nameb).array_dim;
-                now.left_value = now.son.get(0).left_value;
             } else
             if (now.name.equals("=")){
                 if (!now.son.get(0).left_value) {
@@ -509,28 +536,95 @@ public class pro1 {
                     now.data_type = "string";
                 } else
                 if (now.son.get(0).name.equals("sub")){
-                    node upperclass = now.son.get(0).son.get(0);
-                    node lowerclass = now.son.get(0).son.get(1);
-                    if (upperclass.data_array_dim!=0){
-                        throw new Exception("function Error");
-                    }
-                    if (!now.son.get(0).data_type.equals("function")){
-                        throw new Exception("function Error");
-                    }
-                    node func_space = root1.scope.get(upperclass.data_type).location.
-                            scope.get(lowerclass.name).location;
-                    if (func_space.input_variable_type.size()+1!=now.son.size()){
-                        throw new Exception("function Error1");
-                    }
-                    for (int j = 0;j < func_space.input_variable_type.size(); ++j){
-                        if (!(func_space.input_variable_type.get(j).equals(now.son.get(j+1).data_type)&&
-                                func_space.input_variable_array_dim.get(j)==now.son.get(j+1).data_array_dim)){
-                            throw new Exception("function Error2");
+                    if (now.son.get(0).son.get(0).data_array_dim>0&&
+                            now.son.get(0).son.get(1).name.equals("size")){
+                        if (now.son.size()!=1){
+                            throw new Exception("array.size() Error");
                         }
+                        now.data_type = "int";
+                        now.data_array_dim = 0;
+                        now.left_value = false;
+                    } else
+                    if (now.son.get(0).son.get(0).data_array_dim==0 &&now.son.get(0).son.get(0).data_type.equals("string")
+                            &&now.son.get(0).son.get(1).name.equals("length")){
+                        //if (!(now.son.get(0).son.get(0).data_array_dim==0&&now.son.get(0).son.get(0).data_type.equals("string"))){
+                        //    throw new Exception("length Error");
+                        //}
+                        if (now.son.size()!=1){
+                            throw new Exception("string.length() Error");
+                        }
+                        now.data_type = "int";
+                        now.data_array_dim = 0;
+                        now.left_value = false;
+                    } else
+                    if (now.son.get(0).son.get(0).data_array_dim==0 &&now.son.get(0).son.get(0).data_type.equals("string")
+                            &&now.son.get(0).son.get(1).name.equals("substring")){
+                        //if (!(now.son.get(0).son.get(0).data_array_dim==0&&now.son.get(0).son.get(0).data_type.equals("string"))){
+                        //    throw new Exception("substring Error");
+                        //}
+                        if (!(now.son.get(1).data_array_dim==0&&now.son.get(1).data_type.equals("int"))){
+                            throw new Exception("substring Error");
+                        }
+                        if (!(now.son.get(2).data_array_dim==0&&now.son.get(2).data_type.equals("int"))){
+                            throw new Exception("substring Error");
+                        }
+                        if (now.son.size()!=3){
+                            throw new Exception("string.substring() Error");
+                        }
+                        now.data_type = "string";
+                        now.data_array_dim = 0;
+                        now.left_value = false;
+                    } else
+                    if (now.son.get(0).son.get(0).data_array_dim==0 &&now.son.get(0).son.get(0).data_type.equals("string")
+                            &&now.son.get(0).son.get(1).name.equals("parseInt")){
+                        //if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
+                        //    throw new Exception("parseInt Error");
+                        //}
+                        if (now.son.size()!=1){
+                            throw new Exception("string.parseInt() Error");
+                        }
+                        now.data_type = "int";
+                        now.data_array_dim = 0;
+                        now.left_value = false;
+                    } else
+                    if (now.son.get(0).son.get(0).data_array_dim==0 &&now.son.get(0).son.get(0).data_type.equals("string")
+                            &&now.son.get(0).son.get(1).name.equals("ord")){
+                        //if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
+                        //    throw new Exception("ord Error");
+                        //}
+                        if (!(now.son.get(1).data_array_dim==0&&now.son.get(1).data_type.equals("int"))){
+                            throw new Exception("ord Error");
+                        }
+                        if (now.son.size()!=2){
+                            throw new Exception("string.ord() Error");
+                        }
+                        now.data_type = "int";
+                        now.data_array_dim = 0;
+                        now.left_value = false;
+                    } else {
+                        node upperclass = now.son.get(0).son.get(0);
+                        node lowerclass = now.son.get(0).son.get(1);
+                        if (upperclass.data_array_dim != 0) {
+                            throw new Exception("function Error");
+                        }
+                        if (!now.son.get(0).data_type.equals("function")) {
+                            throw new Exception("function Error");
+                        }
+                        node func_space = root1.scope.get(upperclass.data_type).location.
+                                scope.get(lowerclass.name).location;
+                        if (func_space.input_variable_type.size() + 1 != now.son.size()) {
+                            throw new Exception("function Error1");
+                        }
+                        for (int j = 0; j < func_space.input_variable_type.size(); ++j) {
+                            if (!(func_space.input_variable_type.get(j).equals(now.son.get(j + 1).data_type) &&
+                                    func_space.input_variable_array_dim.get(j) == now.son.get(j + 1).data_array_dim)) {
+                                throw new Exception("function Error2");
+                            }
+                        }
+                        now.data_type = func_space.output_variable_type;
+                        now.data_array_dim = func_space.output_variable_array_dim;
+                        now.left_value = false;
                     }
-                    now.data_type = func_space.output_variable_type;
-                    now.data_array_dim = func_space.output_variable_array_dim;
-                    now.left_value = false;
                 }else if (now.son.get(0).type.equals("atom")){
                     node lowerclass = now.son.get(0);
                     int j=-1;
@@ -596,55 +690,6 @@ public class pro1 {
                 }
                 now.data_type = typea.name;
                 now.data_array_dim = arr_dim;
-                now.left_value = false;
-            } else
-            if (now.name.equals("size")){
-                if (now.son.get(0).data_array_dim==0){
-                    throw new Exception("size Error");
-                }
-                now.data_type = "int";
-                now.data_array_dim = 0;
-                now.left_value = false;
-            } else
-            if (now.name.equals("length")){
-                if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
-                    throw new Exception("length Error");
-                }
-                now.data_type = "int";
-                now.data_array_dim = 0;
-                now.left_value = false;
-            } else
-            if (now.name.equals("substring")){
-                if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
-                    throw new Exception("substring Error");
-                }
-                if (!(now.son.get(1).data_array_dim==0&&now.son.get(1).data_type.equals("int"))){
-                    throw new Exception("substring Error");
-                }
-                if (!(now.son.get(2).data_array_dim==0&&now.son.get(2).data_type.equals("int"))){
-                    throw new Exception("substring Error");
-                }
-                now.data_type = "string";
-                now.data_array_dim = 0;
-                now.left_value = false;
-            } else
-            if (now.name.equals("parseInt")){
-                if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
-                    throw new Exception("parseInt Error");
-                }
-                now.data_type = "int";
-                now.data_array_dim = 0;
-                now.left_value = false;
-            } else
-            if (now.name.equals("ord")){
-                if (!(now.son.get(0).data_array_dim==0&&now.son.get(0).data_type.equals("string"))){
-                    throw new Exception("ord Error");
-                }
-                if (!(now.son.get(1).data_array_dim==0&&now.son.get(1).data_type.equals("int"))){
-                    throw new Exception("ord Error");
-                }
-                now.data_type = "int";
-                now.data_array_dim = 0;
                 now.left_value = false;
             }
             else{
@@ -735,7 +780,7 @@ public class pro1 {
                 throw new Exception("CE: return3");
             }
         }
-        if (now.type.equals("continue")){
+        if (now.type.equals("continue")||now.type.equals("break")){
             int j = scope_info.size()-1;
             while (!(scope_info.get(j).type.equals("for")||scope_info.get(j).type.equals("while"))){
                 System.err.println(scope_info.get(j).type);
@@ -856,7 +901,7 @@ public class pro1 {
     }
 
     public static void main(String[] args) throws IOException , Exception {
-        try {
+        try{
             //InputStream is = new FileInputStream("example/4.txt"); // or System.in;
             InputStream is = new FileInputStream("program.txt"); // or System.in;
             //InputStream is = System.in; // or System.in;
@@ -962,9 +1007,10 @@ public class pro1 {
             if (!root1.scope.get("main").type.equals("function")){
                 throw new Exception("No Main");
             }
-        } catch (Throwable eee){
+        }
+        catch(Throwable eee){
             //throw new Exception("Well");
-            System.err.println("CE");
+            //System.err.println("CE");
             //throw eee;
             System.exit(-1);
         }

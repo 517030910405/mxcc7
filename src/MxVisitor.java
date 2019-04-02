@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled15/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -207,61 +207,12 @@ public interface MxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType_int(MxParser.Type_intContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code sizefunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSizefunc(MxParser.SizefuncContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ordfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOrdfunc(MxParser.OrdfuncContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code opl}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOpl(MxParser.OplContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code substringfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubstringfunc(MxParser.SubstringfuncContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprthis}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprthis(MxParser.ExprthisContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprfunc(MxParser.ExprfuncContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code opr}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitOpr(MxParser.OprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code lengthfunc}
-	 * labeled alternative in {@link MxParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLengthfunc(MxParser.LengthfuncContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code exprnew}
 	 * labeled alternative in {@link MxParser#expr}.
@@ -305,12 +256,26 @@ public interface MxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitId1(MxParser.Id1Context ctx);
 	/**
+	 * Visit a parse tree produced by the {@code opl}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOpl(MxParser.OplContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code opassign}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitOpassign(MxParser.OpassignContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprthis}
+	 * labeled alternative in {@link MxParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprthis(MxParser.ExprthisContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code exprmix}
 	 * labeled alternative in {@link MxParser#expr}.
@@ -319,12 +284,12 @@ public interface MxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExprmix(MxParser.ExprmixContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code parseintfunc}
+	 * Visit a parse tree produced by the {@code exprfunc}
 	 * labeled alternative in {@link MxParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParseintfunc(MxParser.ParseintfuncContext ctx);
+	T visitExprfunc(MxParser.ExprfuncContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MxParser#var_}.
 	 * @param ctx the parse tree
