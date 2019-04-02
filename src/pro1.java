@@ -202,7 +202,7 @@ public class pro1 {
             }
             if (scope_info.size()>=2&&scope_info.get(1).scope.containsKey(newname.name)&&
                     (scope_info.get(1).scope.get(newname.name).type.equals("function"))){
-                throw new Exception("Variable Name Invalid 3");
+                //throw new Exception("Variable Name Invalid 3");
             }
             scope_info.get(scope_info.size()-1).scope.put(newname.name,newname);
         }
@@ -470,6 +470,7 @@ public class pro1 {
                 } else{
                     if (!(now.son.get(0).data_type.equals(now.son.get(1).data_type)
                             && now.son.get(0).data_array_dim == now.son.get(1).data_array_dim)) {
+                        System.out.println("["+now.son.get(0).data_type+"] ["+now.son.get(1).data_type+"]");
                         throw new Exception("= is not available2");
                     }
                 }
@@ -627,14 +628,19 @@ public class pro1 {
                     }
                 }else if (now.son.get(0).type.equals("atom")){
                     node lowerclass = now.son.get(0);
-                    int j=-1;
-                    if (scope_info.size()>1&&scope_info.get(1).scope.containsKey(lowerclass.name)){
+                    int j=scope_info.size()-1;
+                    /*if (scope_info.size()>1&&scope_info.get(1).scope.containsKey(lowerclass.name)){
                         j=1;
                     } else if (scope_info.get(0).scope.containsKey(lowerclass.name)){
                         j=0;
                     } else{
                         throw new Exception("function Error3");
+                    }*/
+                    while (!scope_info.get(j).scope.containsKey(lowerclass.name)){
+                        j=j-1;
                     }
+                    //Automatic throw if no function
+
                     node func_namespace = scope_info.get(j).scope.get(lowerclass.name).location;
                     if (!func_namespace.type.equals("function")){
                         throw new Exception("function Error4");
@@ -689,6 +695,7 @@ public class pro1 {
                     throw new Exception("Warning: no use \"new\"");
                 }
                 now.data_type = typea.name;
+                //System.out.println("["+now.data_type+"]");
                 now.data_array_dim = arr_dim;
                 now.left_value = false;
             }
@@ -902,13 +909,14 @@ public class pro1 {
 
     public static void main(String[] args) throws IOException , Exception {
         try{
-            //InputStream is = new FileInputStream("example/4.txt"); // or System.in;
+            //InputStream is = new FileInputStream("example/5.txt"); // or System.in;
             InputStream is = new FileInputStream("program.txt"); // or System.in;
             //InputStream is = System.in; // or System.in;
             ANTLRInputStream input = new ANTLRInputStream(is);
             MxLexer lexer = new MxLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             MxParser parser = new MxParser(tokens);
+            parser.setErrorHandler(new BailErrorStrategy());
             ParseTree tree = parser.mx(); // calc is the starting rule
 
             System.out.println("LISP:");
@@ -1007,12 +1015,12 @@ public class pro1 {
             if (!root1.scope.get("main").type.equals("function")){
                 throw new Exception("No Main");
             }
-        }
-        catch(Throwable eee){
+        } catch(Throwable eee)
+        {
             //throw new Exception("Well");
             //System.err.println("CE");
             //throw eee;
-            System.exit(-1);
+            //System.exit(-1);
         }
         System.out.println("OK");
     }
